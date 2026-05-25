@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5efe8" />
+    <title>Wasze Momenty | Album Weselny</title>
+    <meta name="description" content="Prywatny album weselny — dodaj zdjęcia i podziel się momentem z naszego dnia." />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="setup-banner hidden" id="setupBanner" role="status">
+      Tryb podglądu: wpisz dane Supabase w pliku <strong>config.js</strong>, aby uruchomić przesyłanie zdjęć.
+    </div>
+
+    <header class="hero" id="hero">
+      <nav class="nav">
+        <div class="monogram" id="monogram" aria-label="Monogram pary">J & A</div>
+        <button class="link-button" id="copyLinkBtn" type="button">Udostępnij album</button>
+      </nav>
+
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">NASZ DZIEŃ</p>
+        <h1 id="coupleNames">Julia &amp; Adam</h1>
+        <p class="date" id="weddingDate">20 CZERWCA 2026</p>
+        <p class="hero-text">
+          Uchwyciłeś piękny moment? Podziel się nim z nami i pozostałymi gośćmi.
+        </p>
+        <button class="primary-button" id="openUploadBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4-4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+          Wgraj moment z wesela
+        </button>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">PRZEWIŃ <span></span></div>
+    </header>
+
+    <main>
+      <section class="gallery-section" aria-labelledby="galleryTitle">
+        <div class="section-heading">
+          <p class="eyebrow warm">GALERIA GOŚCI</p>
+          <h2 id="galleryTitle">Wasze momenty</h2>
+          <p id="gallerySubtitle">Zdjęcia przesłane przez naszych najbliższych.</p>
+        </div>
+
+        <div class="gallery-actions">
+          <button class="ghost-button" id="secondUploadBtn" type="button">+ Dodaj zdjęcia</button>
+          <button class="ghost-button" id="refreshBtn" type="button">Odśwież galerię</button>
+        </div>
+
+        <div class="status hidden" id="galleryStatus" aria-live="polite"></div>
+        <div class="gallery" id="gallery" aria-live="polite"></div>
+
+        <div class="empty-state hidden" id="emptyState">
+          <div class="empty-icon">♡</div>
+          <h3>Tu pojawią się pierwsze wspomnienia</h3>
+          <p>Dodaj zdjęcie z wesela i rozpocznij wspólny album.</p>
+          <button class="primary-button small" id="emptyUploadBtn" type="button">Wgraj zdjęcie</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="footerNames">Julia &amp; Adam</p>
+      <p>Dziękujemy, że jesteście z nami ♡</p>
+    </footer>
+
+    <dialog class="upload-dialog" id="uploadDialog">
+      <form class="upload-form" id="uploadForm" method="dialog">
+        <button class="close-button" id="closeUploadBtn" type="button" aria-label="Zamknij">×</button>
+        <p class="eyebrow warm">DODAJ MOMENT</p>
+        <h2>Wgraj zdjęcia</h2>
+        <p class="form-note">Możesz wybrać maksymalnie 10 zdjęć JPG, PNG lub WEBP.</p>
+
+        <label class="drop-zone" id="dropZone" for="photoFiles">
+          <input id="photoFiles" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple required />
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 15V4m0 0 4 4m-4-4-4 4"/></svg>
+          <strong>Wybierz zdjęcia z telefonu</strong>
+          <span>lub przeciągnij je tutaj</span>
+        </label>
+
+        <div class="preview-list" id="previewList"></div>
+
+        <div class="optional-fields">
+          <label>
+            Twoje imię <span>(opcjonalnie)</span>
+            <input id="uploaderName" maxlength="50" type="text" placeholder="np. Kasia" />
+          </label>
+          <label>
+            Podpis <span>(opcjonalnie)</span>
+            <input id="caption" maxlength="120" type="text" placeholder="np. Pierwszy taniec" />
+          </label>
+        </div>
+
+        <label class="consent">
+          <input id="consent" type="checkbox" required />
+          <span>Zgadzam się na umieszczenie przesłanych zdjęć w albumie weselnym.</span>
+        </label>
+
+        <div class="upload-progress hidden" id="uploadProgress" aria-live="polite">
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <span id="progressText">Przesyłanie…</span>
+        </div>
+
+        <button class="primary-button submit" id="submitUploadBtn" type="submit">Prześlij zdjęcia</button>
+        <p class="form-feedback hidden" id="formFeedback" role="status"></p>
+      </form>
+    </dialog>
+
+    <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia">
+      <button class="close-button lightbox-close" id="closeLightboxBtn" type="button" aria-label="Zamknij">×</button>
+      <img id="lightboxImage" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./config.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
