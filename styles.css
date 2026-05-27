@@ -27,10 +27,34 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: "Inter", Arial, sans-serif;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.button-primary:hover {
+  background: var(--accent-dark);
+}
+
+.badge,
+.highlight {
+  background: var(--secondary);
+  color: var(--ink);
+}
+
+.decorative-section {
+  background: var(--sand);
 }
 button, input { font: inherit; }
 button { cursor: pointer; }
