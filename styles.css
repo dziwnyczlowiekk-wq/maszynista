@@ -1,12 +1,27 @@
 :root {
-  --cream: #3cb371;
-  --sand: #3cb371;
-  --ink: #3cb371;
-  --muted: #3cb371;
-  --accent: #96735e;
-  --accent-dark: #3cb371;
-  --white: #ffffff;
-  --shadow: 0 18px 55px rgba(48, 36, 28, 0.12);
+  /* Tła */
+  --cream: #FFF8FA;        /* bardzo jasne różowe tło strony */
+  --sand: #FFE8EE;         /* subtelne różowe sekcje / karty */
+
+  /* Tekst */
+  --ink: #203B32;          /* ciemna zieleń - czytelniejsza niż czysta czerń */
+  --muted: #667A72;        /* tekst pomocniczy */
+
+  /* Kolory motywu przewodniego */
+  --accent: #3CB371;       /* główny zielony: przyciski, linki, ikony */
+  --accent-dark: #278B55;  /* ciemniejsza zieleń: hover, aktywne elementy */
+  --accent-soft: #DDF4E7;  /* jasna zieleń: delikatne wyróżnienia */
+
+  --secondary: #FFC0CB;       /* główny różowy akcent */
+  --secondary-dark: #E99AAA;  /* różowy hover / mocniejsze detale */
+  --secondary-soft: #FFF0F3;  /* bardzo jasny róż */
+
+  /* Neutralne */
+  --white: #FFFFFF;
+  --border: #F1D9DE;
+
+  /* Efekty */
+  --shadow: 0 18px 55px rgba(32, 59, 50, 0.10);
   --radius: 28px;
 }
 * { box-sizing: border-box; }
