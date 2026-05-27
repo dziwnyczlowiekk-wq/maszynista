@@ -54,10 +54,6 @@ function setPersonalization() {
   ui.weddingDate.textContent = date;
   ui.footerNames.textContent = names;
   ui.gallerySubtitle.textContent = config.ALBUM_SUBTITLE || "Zdjęcia przesłane przez naszych najbliższych.";
-  ui.monogram.textContent = names
-    .split("&")
-    .map((name) => name.trim()[0] || "")
-    .join(" & ");
   if (config.HERO_IMAGE) {
     ui.hero.style.backgroundImage = `url("${config.HERO_IMAGE}")`;
   }
