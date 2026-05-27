@@ -21,7 +21,7 @@
   --border: #F1D9DE;
 
   /* Czcionki */
-  --font-decorative: "Great Vibes";
+  --font-decorative: "Great Vibes", cursive;
   --font-elegant: "Cormorant Garamond", Georgia, serif;
   --font-body: "Montserrat", Arial, sans-serif;
 
@@ -35,94 +35,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: var(--font-body);
-  font-weight: 400;
-}
-
-/* Elegancki monogram w menu */
-.monogram {
-  font-family: var(--font-elegant);
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-}
-
-/* Małe podpisy, np. ZAPRASZAMY NA NASZ ŚLUB */
-.eyebrow {
-  margin: 0 0 15px;
-  font-family: var(--font-body);
-  font-size: .74rem;
-  font-weight: 500;
-  letter-spacing: .36em;
-  text-transform: uppercase;
-}
-
-/* Główny ozdobny napis z imionami */
-.hero h1 {
-  margin: 0;
-  font-family: var(--font-decorative);
-  font-size: clamp(4.8rem, 14vw, 9.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: .01em;
-  color: var(--white);
-  text-shadow: 0 3px 18px rgba(0, 0, 0, .18);
-}
-
-/* Data ślubu */
-.date {
-  margin: 22px 0 0;
-  font-family: var(--font-elegant);
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  font-weight: 500;
-  letter-spacing: .34em;
-  text-transform: uppercase;
-}
-
-/* Nagłówki sekcji */
-h2,
-.section-heading h2,
-.upload-form h2,
-.empty-state h3 {
-  font-family: var(--font-elegant);
-  font-weight: 500;
-  letter-spacing: .02em;
-}
-
-/* Teksty opisowe */
-.hero-text,
-.section-heading p,
-.empty-state p,
-.form-note,
-.footer p:last-child {
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.7;
-}
-
-/* Przyciski bardziej eleganckie */
-.primary-button,
-.ghost-button,
-.link-button {
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: .78rem;
-}
-
-/* Ozdobny podpis w stopce */
-.footer p:first-child {
-  margin: 0 0 10px;
-  color: var(--accent-dark);
-  font-family: var(--font-decorative);
-  font-size: clamp(2.8rem, 6vw, 3.6rem);
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-.decorative-section {
-  background: var(--sand);
+  font-family: "Inter", Arial, sans-serif;
 }
 button, input { font: inherit; }
 button { cursor: pointer; }
@@ -206,7 +119,6 @@ h1, h2 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 500;
 }
-
 .hero h1 {
   font-size: clamp(4.2rem, 12vw, 8.3rem);
   line-height: .9;
