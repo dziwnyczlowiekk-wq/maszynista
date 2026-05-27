@@ -48,7 +48,7 @@ const supabase = isConfigured
   : null;
 
 function setPersonalization() {
-  const names = config.COUPLE_NAMES || "";
+  const names = config.COUPLE_NAMES || "Adam & Agnieszka";
   const date = config.WEDDING_DATE || "17 Lipca 2026";
   ui.coupleNames.textContent = names;
   ui.weddingDate.textContent = date;
