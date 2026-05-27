@@ -1,8 +1,6 @@
 /*
-  1. Utwórz projekt Supabase.
-  2. Uruchom plik supabase/setup.sql w SQL Editor.
-  3. W Project Settings > API wklej Project URL i anon public key poniżej.
-  Klucz "anon public" może być na stronie, ponieważ dostęp ograniczają polityki RLS.
+  1. Utwórzony projekt na  Supabase.
+  2. Pliki wgrane do supabase/setup.sql w SQL Editor.
 */
 window.WEDDING_CONFIG = {
   SUPABASE_URL: "https://bzhhcxzykusutnnzdjmm.supabase.co",
