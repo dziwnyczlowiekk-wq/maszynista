@@ -10,6 +10,6 @@ window.WEDDING_CONFIG = {
 
   COUPLE_NAMES: "Agnieszka & Adam",
   WEDDING_DATE: "17 Lipca 2026",
-  HERO_IMAGE: "para.jpg",
+  HERO_IMAGE: "para.png",
   ALBUM_SUBTITLE: "Zdjęcia przesłane przez naszych najbliższych."
 };
