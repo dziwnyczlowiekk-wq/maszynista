@@ -1,10 +1,10 @@
 :root {
   --cream: #ffc0cb;
   --sand: #3cb371;
-  --ink: #342d29;
-  --muted: #756a63;
+  --ink: #3cb371;
+  --muted: #ffc0cb;
   --accent: #96735e;
-  --accent-dark: #725342;
+  --accent-dark: #ffc0cb;
   --white: #ffffff;
   --shadow: 0 18px 55px rgba(48, 36, 28, 0.12);
   --radius: 28px;
